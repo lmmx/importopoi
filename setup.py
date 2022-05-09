@@ -31,7 +31,7 @@ EXTRAS_REQUIRE = {
         "sphinx_rtd_theme",
         "sphinx-autodoc-typehints",  # don't pin to 1.11.1
     ],
-    "tests": ["coverage[toml]>=5.5", "pytest", "click"],
+    "tests": ["coverage[toml]>=5.5", "pytest"],
 }
 EXTRAS_REQUIRE["dev"] = (
     EXTRAS_REQUIRE["tests"] + EXTRAS_REQUIRE["docs"] + ["pre-commit"]
