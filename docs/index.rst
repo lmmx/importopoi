@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 importopoi: Visualising module connections within a Python package
-=====================================================
+==================================================================
 
 .. toctree::
     :maxdepth: 2

@@ -18,5 +18,5 @@ def set_up_logging(name: str, quiet: bool = True):
         console = logging.StreamHandler()
         console.setLevel(logging.DEBUG)
         console.setFormatter(log_format)
-        log.addHandler(console)
+        logger.addHandler(console)
     return logger
