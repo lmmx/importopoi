@@ -1,0 +1,3 @@
+[run]
+omit =
+  src/importopoi/log_utils.py
