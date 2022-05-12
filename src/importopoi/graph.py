@@ -17,7 +17,9 @@ class DirectedModuleGraph:
         self.path = path
         self.adjacencies: dict[str, set[str]] = self.get_adjacency_list()
         self.adj_n = self.numeric_adjacencies()
-        edges = [(i, j) for i in self.adj_n for j in self.adj_n[i]]
+        # The 'adjacency list' is a list of imports, so reverse the edges,
+        # or else you'd represent "imports from" by an outbound edge (bad convention)
+        edges = [(j, i) for i in self.adj_n for j in self.adj_n[i]]
         self.G = gt.Graph(directed=True)
         self.G.add_edge_list(edges)
         vprop = self.G.new_vertex_property("string")
