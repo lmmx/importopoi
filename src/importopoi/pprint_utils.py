@@ -1,5 +1,9 @@
+from __future__ import annotations
+
 from pprint import pprint
 
 __all__ = ["pp"]
 
-pp = lambda x: pprint(x, sort_dicts=False)
+
+def pp(x) -> None:
+    pprint(x, sort_dicts=False)

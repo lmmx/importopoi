@@ -1,4 +1,5 @@
 from argparse import ArgumentParser
+
 import argcomplete
 
 from .graph import draw_directed_graph
