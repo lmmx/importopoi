@@ -13,20 +13,10 @@ wrote while developing it.
 
 [blog-post]: https://pore.spin.systems/importopoi
 
-## Plan
-
-- Use `impgraph`'s JSON output to get an import graph in JSON, running the following in
-  `subprocess.run` for now and later simplifying to use the Python internals
-
-  ```sh
-  impgraph src/importopoi/ -j /dev/stdout
-  ```
-
-- Use `import_dep`'s
-
 ## Requires
 
 - Python 3.9+
+- `graph_tools`
 
 ## Installation
 
