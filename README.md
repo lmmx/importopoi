@@ -8,7 +8,21 @@
 
 Visualising module connections within a Python package
 
-[Read The Docs](https://importopoi.readthedocs.io/en/latest/)
+[Read The Docs](https://importopoi.readthedocs.io/en/latest/) here and the [blog series][blog-post] I
+wrote while developing it.
+
+[blog-post]: https://pore.spin.systems/importopoi
+
+## Plan
+
+- Use `impgraph`'s JSON output to get an import graph in JSON, running the following in
+  `subprocess.run` for now and later simplifying to use the Python internals
+
+  ```sh
+  impgraph src/importopoi/ -j /dev/stdout
+  ```
+
+- Use `import_dep`'s
 
 ## Requires
 

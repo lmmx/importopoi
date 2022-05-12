@@ -11,6 +11,7 @@ importopoi: Visualising module connections within a Python package
     :caption: Contents:
 
     api
+    overview
 
 
 Indices and tables
