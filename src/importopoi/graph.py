@@ -13,6 +13,9 @@ logger = set_up_logging(__name__)
 
 
 class DirectedModuleGraph:
+    abbreviate_package_name = True
+    "Remove the package name from qualnames (e.g. ``foo.bar`` --> ``.bar``"
+
     def __init__(self, path: str):
         self.path = path
         self.adjacencies: dict[str, set[str]] = self.get_adjacency_list()
@@ -26,6 +29,8 @@ class DirectedModuleGraph:
         for vertex in self.G.vertices():
             vertex_idx = self.G.vertex_index[vertex]
             vertex_name = self.int2node[vertex_idx]
+            if self.abbreviate_package_name:
+                vertex_name = vertex_name[vertex_name.find("."):]
             vprop[vertex] = vertex_name
         self.G.vertex_properties["name"] = vprop
 
