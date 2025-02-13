@@ -104,7 +104,7 @@ class Import:
             if qual_path.count(".") < self.relative_level:
                 raise ValueError(
                     f"{qual_path=} is too shallow for the relative level of the import "
-                    f"({self.relative_level})"
+                    f"({self.relative_level})",
                 )
             qual_path_parts = qual_path.split(".")
             qual_prefix = ".".join(qual_path_parts[: -self.relative_level])

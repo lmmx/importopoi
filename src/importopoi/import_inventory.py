@@ -28,14 +28,14 @@ class ImportInventory:
     @property
     def internal_imports(self) -> ModuleImportsDict:
         return {
-            mod_path: (imps := [i for i in imports if i.relative_level > 0])
+            mod_path: ([i for i in imports if i.relative_level > 0])
             for mod_path, imports in self.all_imports.items()
             # if imps  # uncomment to give only the modules which import the package
         }
 
     def package_imports(self, package_name: str) -> ModuleImportsDict:
         return {
-            mod_path: (imps := [i for i in imports if i.package_name == package_name])
+            mod_path: ([i for i in imports if i.package_name == package_name])
             for mod_path, imports in self.all_imports.items()
             # if imps  # uncomment to give only the modules which import the package
         }

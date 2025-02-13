@@ -1,5 +1,5 @@
 from pathlib import Path
-from typing import Iterator
+from collections.abc import Iterator
 
 import graph_tool as gt
 from graph_tool.draw import graph_draw
@@ -158,7 +158,7 @@ class DirectedModuleGraph:
     def numeric_adjacencies(self) -> dict[int, set[int]]:
         """Collect all module names from keys and values of adjacency list"""
         return {
-            self.node2int[i]: set(self.node2int[j] for j in adj)
+            self.node2int[i]: {self.node2int[j] for j in adj}
             for i, adj in self.adjacencies.items()
         }
 
